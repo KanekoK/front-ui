@@ -59,10 +59,22 @@
     });
 
     // ここから一文字ずつフェードインさせる記述
+    let showSpeed = 120; // 文字の出すスピード
+    let delayReload = 10000; // リロードするまでの時間
+
+
+    let strCount = $('.typ').children().size();
+
+
     $('.typ').css({'opacity':1});
-    for (var i = 0; i <= $('.typ').children().size(); i++) {
-      $('.typ').children('span:eq('+i+')').delay(50*i).animate({'opacity':1},50);
+    for (var i = 0; i <= strCount; i++) {
+
+      $('.typ').children('span:eq('+i+')').delay(showSpeed * i).animate({'opacity':1},50);
     };
+
+    setTimeout(function() {
+      document.location.reload();
+    }, showSpeed * strCount + delayReload);
   });
   </script>
 </body>

@@ -1,0 +1,31 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+h1 {
+  text-align: right;
+}
+#wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+p {
+  font-family: "HiraMinProN-W3", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro",
+    "ヒラギノ明朝 Pro W3", "ＭＳ 明朝", sans-serif;
+}
+h2 {
+  font-family: "HiraMinProN-W6", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro",
+    "ヒラギノ明朝 Pro W6", "ＭＳ 明朝", sans-serif;
+}
+
+.typ {
+  opacity: 0;
+}
+.typ span {
+  opacity: 0;
+}
+
+#target {
+  display: none;
+}

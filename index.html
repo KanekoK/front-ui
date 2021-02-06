@@ -11,7 +11,8 @@
     <div id="target">
         <!-- <h2 id="midashi">山路を登りながら、こう考えた。</h2> -->
         <p class="typ">京セラフィロソフィはどのようにして誕生したか。</p>
-        <p>松風工業時代、仕事をするにはこういう考え方、こういう心構えでなければならないと思いつくたびに、研究実験ノートの端に書き留めていくようになりました。どういう心構えで、どんな考え方で取り組めば、よい研究ができるようになるのか、悩み、考え、思いついたことをノートの隅に記録していったのです。</p>
+        <p>松風工業時代、仕事をするにはこういう考え方、こういう心構えでなければならないと思いつくたびに、研究実験ノートの端に書き留めていくようになりました。</p>
+        <p>どういう心構えで、どんな考え方で取り組めば、よい研究ができるようになるのか、悩み、考え、思いついたことをノートの隅に記録していったのです。</p>
         <p>のちに京セラを経営することになった私は、その自分なりの仕事の要諦を書きためていたノートを再び引っ張り出してきて、経営に携わるようになってから気づいたことをさらに書き加えていくようになります。</p>
         <p>これが、私の経営哲学の原点であり、これをまとめ直したものが、「京セラフィロソフィ」なのです。</p>
         <p>また、経営というものが分かっていなかったために、不安でたまらなかった私は、立派な経営をしている方々の話なども聞き、どうすればあのような経営ができるのだろうかと考え続けました。</p>
@@ -26,55 +27,57 @@
   <script type="text/javascript" src="./tategumi.js" charset="utf-8"></script>
   <script type="text/javascript" language="javascript">
 
-  $(function(){
-    $('#target').css('display', 'block');
-    $('#target').Tategumi({
-      styles: [		//target element IDを指定
-      {	selector:'#midashi',
-        style:{	glyphSize:30,		//級数（px）
-            glyphsPerLine:15,	//行文字数（個）
-            lineMargin:18,		//行間（px）
-            glyphMargin:0,		//字間（px）
-            blockMargin:0		//段間（px）
+  $(function() {
+    setTimeout(() => {
+      $('#target').css('display', 'block');
+      $('#target').Tategumi({
+        styles: [		//target element IDを指定
+        {	selector:'#midashi',
+          style:{	glyphSize:30,		//級数（px）
+              glyphsPerLine:15,	//行文字数（個）
+              lineMargin:24,		//行間（px）
+              glyphMargin:0,		//字間（px）
+              blockMargin:0		//段間（px）
+          }
+        },
+        {	selector:'.default',
+          style:{	glyphSize:24,		//級数（px）
+              glyphsPerLine:32,	//行文字数（個）
+              lineMargin:24,		//行間（px）
+              glyphMargin:0,		//字間（px）
+              blockMargin:100		//段間（px）
+          }
+        },
+        {	selector:'.caption',
+          style:{	glyphSize:13,		//級数（px）
+              glyphsPerLine:40,	//行文字数（個）
+              lineMargin:10,		//行間（px）
+              glyphMargin:0,		//字間（px）
+              blockMargin:0		//段間（px）
+          }
         }
-      },
-      {	selector:'.default',
-        style:{	glyphSize:24,		//級数（px）
-            glyphsPerLine:32,	//行文字数（個）
-            lineMargin:18,		//行間（px）
-            glyphMargin:0,		//字間（px）
-            blockMargin:100		//段間（px）
-        }
-      },
-      {	selector:'.caption',
-        style:{	glyphSize:13,		//級数（px）
-            glyphsPerLine:40,	//行文字数（個）
-            lineMargin:10,		//行間（px）
-            glyphMargin:0,		//字間（px）
-            blockMargin:0		//段間（px）
-        }
-      }
-      ],
-      apply: true
-    });
-
-    // ここから一文字ずつフェードインさせる記述
-    let showSpeed = 120; // 文字の出すスピード
-    let delayReload = 10000; // リロードするまでの時間
-
-
-    let strCount = $('.typ').children().size();
-
-
-    $('.typ').css({'opacity':1});
-    for (var i = 0; i <= strCount; i++) {
-
-      $('.typ').children('span:eq('+i+')').delay(showSpeed * i).animate({'opacity':1},50);
-    };
-
-    setTimeout(function() {
-      document.location.reload();
-    }, showSpeed * strCount + delayReload);
+        ],
+        apply: true
+      });
+  
+      // ここから一文字ずつフェードインさせる記述
+      let showSpeed = 120; // 文字の出すスピード
+      let delayReload = 10000; // リロードするまでの時間
+  
+  
+      let strCount = $('.typ').children().size();
+  
+  
+      $('.typ').css({'opacity':1});
+      for (var i = 0; i <= strCount; i++) {
+  
+        $('.typ').children('span:eq('+i+')').delay(showSpeed * i).animate({'opacity':1},50);
+      };
+  
+      setTimeout(function() {
+        document.location.reload();
+      }, showSpeed * strCount + delayReload);
+    }, 5000);
   });
   </script>
 </body>
